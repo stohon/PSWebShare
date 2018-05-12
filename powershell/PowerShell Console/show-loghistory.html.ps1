@@ -6,6 +6,8 @@ write-in @"
 }
 "@
 
+# This script requires that a virtual directory named common has been created in the PSWeb that points to the PSWebShare location.
+
 $outString = "" 
 Get-ChildItem -Path "$env:PSConsole\logs" |
     ? { $_.LastWriteTime -gt (Get-Date).AddDays(-$numDaysOld) } |
