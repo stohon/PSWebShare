@@ -6,7 +6,7 @@ write-in @"
 }
 "@
 
-$outString = ""
+$outString = "" 
 Get-ChildItem -Path "$env:PSConsole\logs" |
     ? { $_.LastWriteTime -gt (Get-Date).AddDays(-$numDaysOld) } |
     sort LastWriteTime -Descending |
